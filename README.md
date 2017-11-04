@@ -33,17 +33,20 @@ The training dataset is collected by recording my driving behavior with Udacity'
 
 ### Left, Center and Right Views
 
-The simulator captures images from three cameras mounted on the car: a center, right and left camera. 
+The simulator captures images from three cameras mounted on the car: a center, right and left camera.
+
 <img src="images/view3.jpg" alt="Loss graph" width="960" height="160" border="10" />
 
 ### Image Cropping and Normalisation
 
 Images are cropped top and bottom. These portions contain redundant features like the vehicle's bonnet and sky. Images were then normalised using lambda to bring their values between -0.5 and 0.5.
+
 <img src="images/cropped.png" alt="cropped image" width="700" height="160" border="10" />
 
 ### Mirroring Driving image
 
 In order to help the model generalise better, all images were flipped horizontally, and their steering angles reversed. This provides a counter to each run of the track, alleviating any concerns of left-right bias in steering input. It also double the training datasets.
+
 <img src="images/mirror.jpg" alt="mirror image" width="640" height="160" border="10" />
 
 ### Recovery Driving
