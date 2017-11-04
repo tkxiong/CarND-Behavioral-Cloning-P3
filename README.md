@@ -24,7 +24,7 @@ Learning parameters
 
 ### Visualizing Loss
 
-<img src="images/loss_graph.png" alt="Loss graph" width="480" height="320" border="10" />
+<img src="images/loss_graph.png" alt="Loss graph" width="320" height="160" border="10" />
 
 ## Dataset setup
 
