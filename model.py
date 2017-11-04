@@ -5,7 +5,7 @@ from keras.models import Sequential
 from keras.layers import *
 
 from sklearn.model_selection import train_test_split
-
+import matplotlib.pyplot as plt
 from data_generator import data_generate
 
 # Parameters
@@ -63,7 +63,19 @@ print('Total number of samples: ', len(lines)*2)
 
 # Loss function and optimiser step
 model.compile(loss='mse', optimizer='adam')
-model.fit_generator(X_train_data, steps_per_epoch=len(X_train)/batch_sizes, validation_data=X_valid_data, validation_steps=len(X_valid)/batch_sizes, epochs=epochs)
+history_object = model.fit_generator(X_train_data, steps_per_epoch=len(X_train)/batch_sizes, validation_data=X_valid_data, validation_steps=len(X_valid)/batch_sizes, epochs=epochs, verbose=1)
 print('Training complete!')
 model.save('model.h5')
 print('Model saved!')
+
+### print the keys contained in the history object
+print(history_object.history.keys())
+
+### plot the training and validation loss for each epoch
+plt.plot(history_object.history['loss'])
+plt.plot(history_object.history['val_loss'])
+plt.title('model mean squared error loss')
+plt.ylabel('mean squared error loss')
+plt.xlabel('epoch')
+plt.legend(['training set', 'validation set'], loc='upper right')
+plt.show()
