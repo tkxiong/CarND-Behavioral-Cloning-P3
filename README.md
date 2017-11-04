@@ -17,10 +17,10 @@ Every convolutional layer is activated with a RELU function to introduce non-lin
 
 The error was finally calculated with a MSE(means-squared error) function. 
 Learning parameters
-..* AdamOptimizer
-..* Batch sizes : 32
-..* Dropout : 0.3
-..* Epochs : 10
+* AdamOptimizer
+* Batch sizes : 32
+* Dropout : 0.3
+* Epochs : 10
 
 ### Visualizing Loss
 
@@ -51,10 +51,11 @@ In order to help the model generalise better, all images were flipped horizontal
 In the simulator driving circuit, some areas have sharp curved turn. The vehicle needed help to learn how to recover from off-center situations. More recovery driving dataset are recorded in those areas. 
 
 ### Data Collection
-..* 4 laps of clockwise center lane driving
-..* 4 laps of anti-clockwise center lane driving
-..* 1 lap of recovering driving from the sides
-..* 1 lap focusing on driving smoothly around curves
+
+* 4 laps of clockwise center lane driving
+* 4 laps of anti-clockwise center lane driving
+* 1 lap of recovering driving from the sides
+* 1 lap focusing on driving smoothly around curves
 
 ## Strategy and Design
 
